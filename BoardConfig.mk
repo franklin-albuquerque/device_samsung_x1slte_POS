@@ -27,5 +27,8 @@ TARGET_KERNEL_CONFIG := exynos9830-x1slte_defconfig
 # OTA
 TARGET_OTA_ASSERT_DEVICE := x1slte
 
+# Properties
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+
 # inherit from the proprietary version
 -include vendor/samsung/x1slte/BoardConfigVendor.mk
