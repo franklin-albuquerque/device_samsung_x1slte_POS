@@ -20,6 +20,12 @@ DEVICE_PATH := device/samsung/x1slte
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/audio/mixer_gains.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_gains.xml
 
+# Bluetooth
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0-impl:64 \
+    android.hardware.bluetooth@1.0-service \
+    libbt-vendor:64
+
 # Boot Animation
 TARGET_SCREEN_HEIGHT := 3200
 TARGET_SCREEN_WIDTH := 1440
@@ -36,7 +42,18 @@ PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
 
 # WiFi
 PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-service \
+    hostapd \
+    wpa_supplicant \
+    wpa_supplicant.conf \
+    wifi_brcm.rc \
+    wifi_sec.rc \
     WifiOverlay
+
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
+    $(DEVICE_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
+
 
 # Inherit from common
 $(call inherit-product, device/samsung/universal9830-common/device-common.mk)
