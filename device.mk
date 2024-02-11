@@ -34,6 +34,10 @@ PRODUCT_COPY_FILES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
 
+# WiFi
+PRODUCT_PACKAGES += \
+    WifiOverlay
+
 # Inherit from common
 $(call inherit-product, device/samsung/universal9830-common/device-common.mk)
 
