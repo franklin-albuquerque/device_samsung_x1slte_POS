@@ -1,13 +1,8 @@
 # All unpinned blobs are from G980FXXSIHWKD
 # Vendor security patch level 2023-12-01
 
-# Audio
-vendor/etc/LVACFS_Configuration.txt
-vendor/etc/LVACFS_ControlParams.txt
+# Audio (Dolby Atmos)
 vendor/etc/dolby/dax-default.xml
--vendor/lib/lib_SamsungRec_08020.so
--vendor/lib/lib_lvacfs.so
--vendor/lib/librecordalive.so
 -vendor/lib/soundfx/libswdap.so
 
 # Audio (Firmware)
@@ -26,9 +21,6 @@ vendor/firmware/bcmdhd_clm.blob
 vendor/firmware/bcmdhd_mfg.bin_b1
 vendor/firmware/bcmdhd_mon.bin_b1
 vendor/firmware/bcmdhd_sta.bin_b1
-
-# Bluetooth (A2DP)
--vendor/lib/vendor.samsung.hardware.bluetooth.a2dp@1.0.so
 
 # Camera
 -vendor/lib64/hw/camera.exynos990.so
